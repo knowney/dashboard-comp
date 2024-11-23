@@ -19,25 +19,23 @@ const client = () => {
   instance.interceptors.response.use(
     (response) => response,
     async (error) => {
-      const originalRequest = error.config;
-      if (error.response.status === 401) {
-        window.location.href = '/index';
-        localStorage.removeItem('accessToken');
-      }
-      if (error.response.status === 401 && !originalRequest._retry) {
-        originalRequest._retry = true;
-
-        const refreshToken = localStorage.getItem('refreshToken');
-        const resp = await API.refreshToken(refreshToken);
-        const access_token = resp.data.accessToken;
-
-        localStorage.setItem('accessToken', access_token);
-        instance.defaults.headers.common[
-          'Authorization'
-        ] = `Bearer ${access_token}`;
-        return instance(originalRequest);
-      }
-      return Promise.reject(error);
+      // const originalRequest = error.config;
+      // if (error.response.status === 401) {
+      //   window.location.href = '/index';
+      //   localStorage.removeItem('accessToken');
+      // }
+      // if (error.response.status === 401 && !originalRequest._retry) {
+      //   originalRequest._retry = true;
+      //   const refreshToken = localStorage.getItem('refreshToken');
+      //   const resp = await API.refreshToken(refreshToken);
+      //   const access_token = resp.data.accessToken;
+      //   localStorage.setItem('accessToken', access_token);
+      //   instance.defaults.headers.common[
+      //     'Authorization'
+      //   ] = `Bearer ${access_token}`;
+      //   return instance(originalRequest);
+      // }
+      // return Promise.reject(error);
     },
   );
 

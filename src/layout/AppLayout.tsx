@@ -1,7 +1,6 @@
 import { Layout } from 'antd';
 import { Contents, Headerbar, Sidebar } from '.';
 import * as API from '../apis';
-import { useLoaderData } from 'react-router-dom';
 
 export async function layoutLoader() {
   try {
@@ -14,16 +13,14 @@ export async function layoutLoader() {
 }
 
 export const AppLayout = () => {
-  const { orgSetting } = useLoaderData() as any;
-
-  console.log({ orgSetting });
+  // const { orgSetting } = useLoaderData() as any;
 
   return (
     <>
       <Layout
         style={{ height: '100vh', display: 'flex', flexDirection: 'row' }}
       >
-        <Sidebar setting={orgSetting} />
+        <Sidebar setting={{}} />
         <Layout>
           <Headerbar />
           <Contents />

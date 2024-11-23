@@ -10,18 +10,24 @@ export const Menus = (props: MenusProps) => {
 
   const menus = [
     {
-      //<Link to="/admin/analytic" >วิเคราะห์ระบบ</Link>
-      label: <Link to="/admin/analytic">วิเคราะห์ระบบ</Link>,
+      label: <Link to="/admin/analytic">ภาพรวม</Link>,
       key: '/admin/analytic',
       icon: <Icon.PieChartOutlined />,
-      role: ['super_admin'],
+      role: ['super_admin', 'owner'],
       // disable: true,
     },
     {
-      label: <Link to="/admin/organize">องค์กร</Link>,
+      label: <Link to="/user">การเเข่งขัน</Link>,
+      key: '/user',
+      icon: <Icon.DashboardOutlined />,
+      role: ['owner', 'manager'],
+    },
+
+    {
+      label: <Link to="/admin/organize">ข่าวสาร</Link>,
       key: '/admin/organize',
       icon: <Icon.ScheduleOutlined />,
-      role: ['super_admin'],
+      role: ['super_admin', 'owner'],
     },
     {
       //<Link to="/admin/employee">พนักงาน</Link>,
@@ -44,34 +50,34 @@ export const Menus = (props: MenusProps) => {
     //   role: ['owner'],
     // },
     {
-      label: <p style={{ color: 'grey' }}>กิจกรรมการทำงาน</p>,
+      label: <b style={{ color: 'grey' }}>จัดการการแข่งขัน</b>,
       icon: <Icon.FieldTimeOutlined style={{ color: 'grey' }} />,
       role: ['owner', 'manager', 'supervisor', 'employee'],
       key: '/attendance-menu',
       children: [
         {
-          label: <Link to="/attendance">ภาพรวม</Link>,
+          label: <Link to="/attendance">กรรมการ</Link>,
           icon: <Icon.DashboardOutlined />,
           role: ['owner', 'manager', 'supervisor'],
           key: '/attendance',
         },
         {
-          label: <Link to="/attendance/action">การเข้าออกงาน</Link>,
+          label: <Link to="/attendance/action">ใบประเมิน</Link>,
           icon: <Icon.PlayCircleOutlined />,
           role: ['owner', 'manager', 'supervisor', 'employee'],
           key: '/attendance/action',
         },
 
         {
-          label: <Link to="/approval">การลางาน</Link>,
+          label: <Link to="/approval">การเเข่งขัน</Link>,
           icon: <Icon.CarryOutOutlined />,
           role: ['owner', 'manager', 'supervisor', 'employee'],
           key: '/approval',
         },
         {
-          label: <Link to="/appointment">การนัดหมาย</Link>,
+          label: <Link to="/appointment">ใบประเมินผลการเข่งขัน</Link>,
           icon: <Icon.ScheduleOutlined />,
-          role: ['owner', 'manager', 'supervisor', 'employee'],
+          role: ['manager', 'supervisor', 'employee'],
           key: '/appointment',
         },
         // {
@@ -84,12 +90,7 @@ export const Menus = (props: MenusProps) => {
         // },
       ],
     },
-    {
-      label: <Link to="/user">ผู้ใช้</Link>,
-      key: '/user',
-      icon: <Icon.UserOutlined />,
-      role: ['owner', 'manager'],
-    },
+
     // {
     //   //  <Link to="/customer">
     //   label: <Link to="/customer">ลูกค้า</Link>,
@@ -154,7 +155,7 @@ export const Menus = (props: MenusProps) => {
     },
     {
       // <Link to="/information">
-      label: <Link to="/information">ข้อมูลองค์กร</Link>,
+      label: <Link to="/information">ตั้งค่า</Link>,
       key: '/information',
       icon: <Icon.SettingOutlined />,
       role: ['owner'],

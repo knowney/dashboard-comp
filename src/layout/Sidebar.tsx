@@ -1,7 +1,7 @@
 import React from 'react';
 import { Layout, Menu, Image, Typography, Row, Col, Button, Flex } from 'antd';
 import { Link, useLocation } from 'react-router-dom';
-import logo from '../assets/images/logoutotechV2.png';
+import logo from '../assets/images/logoCOMP.svg';
 import sidebar from '../assets/images/abstract_sidebar.png';
 import { Menus } from '.';
 import {
@@ -163,7 +163,6 @@ export const Sidebar = (props: SidebarProps) => {
                       {handleNameWithType(setting?.organization?.type)}
                     </Typography>
                     <Typography style={{ color: 'grey', fontSize: '16px' }}>
-                      (สำนักงานใหญ่)
                       {/* {`(${setting?.organization?.branches[0]?.nameTh})`} */}
                     </Typography>
                   </Flex>

@@ -50,10 +50,10 @@ export const Config = {
         colorBgContainer: '#19142A',
       },
       Menu: {
-        itemSelectedBg: '#19142A',
+        itemSelectedBg: '#B12341',
         itemSelectedColor: '#ffffff',
         itemColor: 'grey',
-        itemHoverColor: 'lightGrey',
+        itemHoverColor: '#B12341',
       },
 
       Calendar: {
@@ -65,7 +65,7 @@ export const Config = {
         headerBg: '#ffffff',
       },
       Table: {
-        headerBg: '#19142A',
+        headerBg: '#B12341',
         headerColor: 'rgba(255, 255, 255, 0.88)',
         headerSortHoverBg: '#A79DB4',
         headerSortActiveBg: '#19142A',
@@ -74,7 +74,7 @@ export const Config = {
       Segmented: { itemSelectedBg: '#19142A', itemSelectedColor: '#ffffff' },
     },
     Button: {
-      defaultColor: 'rgb(25, 20, 42)',
+      defaultColor: 'rgb(177, 35, 65)',
       colorPrimaryHover: 'rgb(25, 20, 42)',
       colorPrimaryBorder: 'rgb(25, 20, 42)',
       colorPrimaryActive: 'rgb(25, 20, 42)',
@@ -86,7 +86,7 @@ export const Config = {
       defaultHoverBorderColor: 'rgb(25, 20, 42)',
       defaultHoverColor: 'rgb(25, 20, 42)',
       groupBorderColor: 'rgb(25, 20, 42)',
-      colorPrimary: 'rgb(25, 20, 42)',
+      colorPrimary: 'rgb(177, 35, 65)',
       colorErrorHover: 'rgb(226, 49, 54)',
       colorErrorActive: 'rgb(226, 49, 54)',
       colorError: 'rgb(226, 49, 54)',

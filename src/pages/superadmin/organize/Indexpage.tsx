@@ -97,20 +97,20 @@ export const OrganizeIndex: React.FC = () => {
     <Flex vertical gap={'small'}>
       {/* Title section from title component */}
       <TitleBar
-        title={'องค์กรทั้งหมด'}
+        title={'ข่าวสาร'}
         subTitle={
           <Row gutter={6} align="middle">
             <Col>
               <TagOutlined />
             </Col>
             <Col>
-              <Typography>ค้นหาองค์กร</Typography>
+              <Typography>ค้นหาข่าวสาร</Typography>
             </Col>
           </Row>
         }
         buttons={[
           <Link to={'create'}>
-            <CreateButton label={'เพิ่มข้อมูลองค์กร'} />
+            <CreateButton label={'เพิ่มข่าวสาร'} />
           </Link>,
         ]}
       />

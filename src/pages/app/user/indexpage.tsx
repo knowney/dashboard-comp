@@ -22,14 +22,14 @@ export const UsersIndex: React.FC = () => {
   return (
     <Flex vertical gap={'small'}>
       <TitleBar
-        title={'ข้อมูลผู้ใช้'}
+        title={'การแข่งขัน'}
         subTitle={
           <Row gutter={6} align="middle">
             <Col>
               <TagOutlined />
             </Col>
             <Col>
-              <Typography>ข้อมูลผู้ใช้</Typography>
+              <Typography>การแข่งขัน</Typography>
             </Col>
           </Row>
         }

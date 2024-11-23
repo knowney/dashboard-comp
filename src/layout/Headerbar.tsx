@@ -9,11 +9,9 @@ import {
 } from '@ant-design/icons';
 import { Link, useLocation } from 'react-router-dom';
 import {
-  Avatar,
   Badge,
   Breadcrumb,
   Button,
-  Card,
   Col,
   Dropdown,
   Empty,
@@ -26,13 +24,13 @@ import {
   notification,
 } from 'antd';
 import { useTranslation } from 'react-i18next';
-import Pusher from 'pusher-js';
+// import Pusher from 'pusher-js';
 import * as API from '@src/apis';
 import axios from 'axios';
 import { useGoogleLogin } from '@react-oauth/google';
 import { json, redirect } from 'react-router-dom';
 
-const pusherKey = import.meta.env.VITE_APP_PUSHER_APP_KEY;
+// const pusherKey = import.meta.env.VITE_APP_PUSHER_APP_KEY;
 
 const clientId =
   '23189663829-jbftuq5rc78ct17qkjd48f97lcmd28h0.apps.googleusercontent.com';
@@ -66,7 +64,7 @@ async function loginWithGoogleAction(data: any) {
 export const Headerbar: React.FC = () => {
   const location = useLocation();
   const { t } = useTranslation();
-  const [notificationsCount, setNotificationsCount] = React.useState(0);
+  const [notificationsCount] = React.useState(0);
   const me = JSON.parse(localStorage.getItem('me') as any);
 
   const login = useGoogleLogin({
@@ -135,13 +133,12 @@ export const Headerbar: React.FC = () => {
       key: 'see-more',
     },
     {
-      label: <Empty description={'ไม่มีการแจ้งเตือนในขนาดนี้'} />,
+      label: <Empty description={'ไม่มีการแจ้งเตือนในขณะนี้'} />,
       key: 'empty',
     },
   ];
 
-  const [notifications, setNotifications] =
-    React.useState(defaultNotifications);
+  const [] = React.useState(defaultNotifications);
 
   const items: MenuProps['items'] = [
     {
@@ -267,48 +264,6 @@ export const Headerbar: React.FC = () => {
       </Breadcrumb>
     );
   };
-
-  React.useEffect(() => {
-    const pusher = new Pusher(pusherKey, {
-      cluster: 'ap1',
-    });
-
-    const channel = pusher.subscribe('notifications');
-
-    channel.bind('notifications', (data: any) => {
-      setNotificationsCount((prevCount) => prevCount + 1);
-      // notifications.push({
-      //   label: (
-      //     <Link to={`/admin/notification/${data.id}`}>
-      //       <Flex gap={12} align="center">
-      //         <Avatar icon={<Icon.UserOutlined />} />
-      //         <Card.Meta title={data.title} description={data.description} />
-      //       </Flex>
-      //     </Link>
-      //   ),
-      //   key: `notification-${data.id}`,
-      // });
-
-      setNotifications((prev: any) => [
-        {
-          label: (
-            <Link to={`/admin/notification/${data.id}`}>
-              <Flex gap={12} align="center">
-                <Avatar icon={<UserOutlined />} />
-                <Card.Meta title={data.title} description={data.description} />
-              </Flex>
-            </Link>
-          ),
-          key: `notification-${data.id}`,
-        },
-        ...prev,
-      ]);
-    });
-
-    return () => {
-      pusher.unsubscribe('test-channel');
-    };
-  }, [notifications]);
 
   return (
     <div style={styles.header}>

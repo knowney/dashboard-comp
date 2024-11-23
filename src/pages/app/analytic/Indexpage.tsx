@@ -9,9 +9,9 @@ interface CardData {
   unit: string;
 }
 const cardData: CardData[] = [
-  { title: 'จำนวนลูกค้า', value: 538, unit: '' },
-  { title: 'จำนวนพนักงาน', value: 70, unit: 'คน' },
-  { title: 'จำนวนสาขา', value: 24, unit: '' },
+  { title: 'จำนวนผู้เข้าแข่งขัน', value: 538, unit: '' },
+  { title: 'จำนวนรายการแข่งขัน', value: 70, unit: 'คน' },
+  { title: 'รายการที่ลง', value: 24, unit: '' },
 ];
 const cardStyle: CSSProperties = {
   textAlign: 'center',

@@ -6,7 +6,8 @@ body {
 }
 
 * {
-  font-family: 'IBM Plex Sans Thai', sans-serif !important;
+  font-family: 'Prompt', sans-serif !important;
+  font-weight: 50;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -110,14 +111,6 @@ code {
   max-width: 1000px !important; /* Set the desired width */
   min-width: 400px !important;
   white-space: normal; /* Ensure the text wraps */
-}
-
-.limited-text {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2; /* Limit to 3 lines */
-  overflow: hidden; /* Hide overflow */
-  text-align: justify; /* Justify text */
 }
 
 /* Add this to your CSS file or style block */

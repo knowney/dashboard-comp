@@ -23,7 +23,7 @@ export const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
-    loader: RootLoader,
+    // loader: RootLoader,
     children: [
       {
         path: '/public',
@@ -39,7 +39,7 @@ export const router = createBrowserRouter([
       {
         path: '',
         element: <AppLayout />,
-        loader: layoutLoader,
+        // loader: layoutLoader,
         children: [...appRoutes],
       },
     ],
